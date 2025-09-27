@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleepysleve | Premium Streetwear</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles & Variables */
+        :root {
+            --primary: #000000;
+            --secondary: #ffffff;
+            --accent: #ff3366;
+            --accent-dark: #e02e5a;
+            --gray: #f8f9fa;
+            --dark-gray: #2d3748;
+            --light-gray: #e2e8f0;
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--secondary);
+            color: var(--primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            touch-action: pan-y;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* Header */
+        header {
+            padding: 1.5rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .header-scrolled {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            padding: 1rem 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            color: #000;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            color: var(--secondary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsIDUxLCAxMDIsIDAuMDUpIj48L3JlY3Q+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIj48L3JlY3Q+PC9zdmc+');
+            opacity: 0.2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 650px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background-color: var(--accent);
+            color: var(--secondary);
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 51, 102, 0.3);
+            background-color: var(--accent-dark);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--secondary);
+            margin-left: 1rem;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--secondary);
+            color: var(--primary);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background-color: var(--gray);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--dark-gray);
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark-gray) 100%);
+            height: 400px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            font-size: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image::before {
+            content: 'SLEEPYSLEVE';
+            position: absolute;
+            font-size: 5rem;
+            font-weight: 900;
+            opacity: 0.03;
+            transform: rotate(-30deg);
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        /* Game Section */
+        .game-section {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, var(--gray) 0%, var(--secondary) 100%);
+            text-align: center;
+        }
+
+        .game-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--secondary);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--light-gray);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-title {
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .game-instructions {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+        }
+
+        .game-ui {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .game-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            background: var(--gray);
+            padding: 1rem;
+            border-radius: 10px;
+        }
+
+        .score-display {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .timer-display {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .lives-display {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .life {
+            width: 20px;
+            height: 20px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .life.lost {
+            background-color: var(--light-gray);
+            transform: scale(0.8);
+        }
+
+        .game-area {
+            position: relative;
+            height: 400px;
+            background: linear-gradient(to bottom, #87CEEB, #E0F7FF);
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 600px;
+            border: 3px solid var(--dark-gray);
+            /* Optimize for performance */
+            transform: translateZ(0);
+            will-change: transform;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .bucket {
+            position: absolute;
+            bottom: 10px;
+            width: 100px;
+            height: 70px;
+            background-color: var(--accent);
+            border-radius: 10px 10px 0 0;
+            transition: left 0.1s ease-out;
+            z-index: 10;
+            /* Optimize for performance */
+            transform: translateZ(0);
+            will-change: left;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .bucket::after {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 10px;
+            width: 80px;
+            height: 20px;
+            background-color: var(--accent);
+            border-radius: 10px 10px 0 0;
+        }
+
+        .falling-item {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            z-index: 5;
+            /* Optimize for performance */
+            transform: translateZ(0);
+            will-change: transform;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+
+        .item-t-shirt {
+            background: linear-gradient(135deg, #4A90E2, #7B68EE);
+        }
+
+        .item-hoodie {
+            background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+        }
+
+        .item-pants {
+            background: linear-gradient(135deg, #2ecc71, #1abc9c);
+        }
+
+        .item-bomb {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+        }
+
+        .game-controls {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .control-info {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .control-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--gray);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+
+        .control-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        .color-t-shirt {
+            background: linear-gradient(135deg, #4A90E2, #7B68EE);
+        }
+
+        .color-hoodie {
+            background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+        }
+
+        .color-pants {
+            background: linear-gradient(135deg, #2ecc71, #1abc9c);
+        }
+
+        .color-bomb {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+        }
+
+        .game-result {
+            display: none;
+            margin-top: 2rem;
+            padding: 2.5rem;
+            background-color: var(--gray);
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid var(--light-gray);
+        }
+
+        .result-title {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .result-message {
+            margin-bottom: 1.5rem;
+            color: var(--dark-gray);
+        }
+
+        .result-score {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--accent);
+        }
+
+        .result-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .play-again {
+            background-color: var(--dark-gray);
+            color: var(--secondary);
+        }
+
+        .play-again:hover {
+            background-color: var(--primary);
+        }
+
+        /* Instagram Section */
+        .instagram {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(to bottom, var(--secondary) 0%, var(--gray) 100%);
+        }
+
+        .instagram-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .instagram-item {
+            height: 250px;
+            background-color: var(--gray);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            overflow: hidden;
+            position: relative;
+            border: 1px solid var(--light-gray);
+        }
+
+        .instagram-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .instagram-item i {
+            font-size: 3rem;
+            color: var(--dark-gray);
+            transition: var(--transition);
+        }
+
+        .instagram-item:hover i {
+            color: var(--accent);
+            transform: scale(1.1);
+        }
+
+        .instagram-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 51, 102, 0.1) 0%, rgba(0, 0, 0, 0.05) 100%);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .instagram-item:hover::after {
+            opacity: 1;
+        }
+
+        .instagram-handle {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            display: inline-block;
+            background: var(--gray);
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            border: 1px solid var(--light-gray);
+        }
+
+        .instagram-handle span {
+            color: var(--accent);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background-color: var(--primary);
+            color: var(--secondary);
+            text-align: center;
+        }
+
+        .contact h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact p {
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            opacity: 0.8;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 0 2rem;
+            text-align: center;
+            background-color: var(--dark-gray);
+            color: var(--secondary);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .copyright {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Maintenance Notice */
+        .maintenance-notice {
+            background-color: var(--accent);
+            color: var(--secondary);
+            padding: 12px 0;
+            text-align: center;
+            font-weight: 500;
+            position: relative;
+            z-index: 1001;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes confetti {
+            0% {
+                transform: translateY(0) rotate(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: var(--accent);
+            opacity: 0;
+            z-index: 1000;
+            animation: confetti 3s ease-in forwards;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--secondary);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 3rem;
+                transition: var(--transition);
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            nav ul.active {
+                left: 0;
+            }
+
+            nav ul li {
+                margin: 1.5rem 0;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn-outline {
+                margin-left: 0;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-image {
+                height: 300px;
+                order: -1;
+            }
+
+            .game-container {
+                padding: 2rem 1.5rem;
+            }
+
+            .game-area {
+                height: 300px;
+            }
+
+            .bucket {
+                width: 80px;
+                height: 60px;
+            }
+
+            .bucket::after {
+                width: 60px;
+                left: 10px;
+            }
+
+            .falling-item {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .game-header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .control-info {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: center;
+            }
+
+            .result-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .instagram-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+
+            .instagram-item {
+                height: 150px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Maintenance Notice -->
+    <div class="maintenance-notice">
+        <div class="container">
+            <i class="fas fa-tools"></i> Our website is currently under maintenance for an enhanced experience. Shop now on Instagram!
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Sleepysleve</div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav>
+                    <ul id="nav-menu">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#game">Clothing Catch</a></li>
+                        <li><a href="#instagram">Shop</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Redefining Streetwear</h1>
+                <p>Sleepysleve brings you premium streetwear with unique designs and exceptional quality. While we're upgrading our online experience, shop our latest collection directly on Instagram.</p>
+                <div class="hero-buttons">
+                    <a href="#instagram" class="btn">Shop Now</a>
+                    <a href="#game" class="btn btn-outline">Play Clothing Catch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Sleepysleve</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Our Story</h2>
+                    <p>Sleepysleve is a premium streetwear brand that emerged from the vibrant urban culture of today's youth. We believe that clothing is more than just fabric—it's a form of self-expression, a statement of identity.</p>
+                    <p>Our designs blend contemporary aesthetics with timeless quality, creating pieces that stand out while standing the test of time. Each garment is crafted with attention to detail and a commitment to sustainability.</p>
+                    <p>While we're enhancing our digital presence, our commitment to delivering exceptional streetwear remains unchanged. Follow our journey on Instagram to stay updated with our latest collections.</p>
+                </div>
+                <div class="about-image">
+                    Premium Streetwear
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Section -->
+    <section class="game-section" id="game">
+        <div class="container">
+            <h2 class="section-title">Sleepysleve Clothing Catch</h2>
+            <div class="game-container">
+                <p class="game-instructions">Catch falling clothing items in your bucket! Avoid the bombs. Use arrow keys or touch to move.</p>
+                
+                <div class="game-ui">
+                    <div class="game-header">
+                        <div class="score-display">Score: <span id="score">0</span></div>
+                        <div class="timer-display">Time: <span id="timer">60</span>s</div>
+                        <div class="lives-display">
+                            <div class="life" id="life-1"></div>
+                            <div class="life" id="life-2"></div>
+                            <div class="life" id="life-3"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="game-area" id="game-area">
+                        <div class="bucket" id="bucket"></div>
+                        <!-- Falling items will be generated by JavaScript -->
+                    </div>
+                    
+                    <div class="control-info">
+                        <div class="control-item">
+                            <div class="control-color color-t-shirt"></div>
+                            <span>T-Shirt = +10 points</span>
+                        </div>
+                        <div class="control-item">
+                            <div class="control-color color-hoodie"></div>
+                            <span>Hoodie = +20 points</span>
+                        </div>
+                        <div class="control-item">
+                            <div class="control-color color-pants"></div>
+                            <span>Pants = +15 points</span>
+                        </div>
+                        <div class="control-item">
+                            <div class="control-color color-bomb"></div>
+                            <span>Bomb = -1 life</span>
+                        </div>
+                    </div>
+                    
+                    <div class="game-controls">
+                        <button class="btn" id="start-game">Start Game</button>
+                        <button class="btn" id="pause-game" disabled>Pause</button>
+                    </div>
+                </div>
+                
+                <div class="game-result" id="game-result">
+                    <h3 class="result-title" id="result-title">Game Over!</h3>
+                    <p class="result-message" id="result-message"></p>
+                    <div class="result-score">Your Score: <span id="final-score">0</span></div>
+                    <p>Great job! Check out our actual clothing collection on Instagram.</p>
+                    <div class="result-buttons">
+                        <a href="#instagram" class="btn">Explore on Instagram</a>
+                        <button class="btn play-again" id="play-again">Play Again</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Section -->
+    <section class="instagram" id="instagram">
+        <div class="container">
+            <h2 class="section-title">Shop Our Collection</h2>
+            <p>Browse our latest streetwear collection and shop directly through Instagram</p>
+            
+            <div class="instagram-handle">
+                Follow us: <span>@sleepysleve</span>
+            </div>
+            
+
+            
+            <a href="https://instagram.com/sleepysleve" target="_blank" class="btn">Shop on Instagram</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p>Have questions about our products or need assistance with an order? Reach out to us through our social channels.</p>
+            
+            <div class="social-links">
+                <a href="https://instagram.com/sleepysleve" class="social-link" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="mailto:info@sleepysleve.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+           <p>Email: sleepysleve@gmail.com</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">Sleepysleve</div>
+                <div class="copyright">© 2025 Sleepysleve. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Clothing Catch Game Logic - OPTIMIZED VERSION
+        const gameState = {
+            score: 0,
+            timeLeft: 60,
+            lives: 3,
+            isPlaying: false,
+            gameInterval: null,
+            itemInterval: null,
+            bucketPosition: 0,
+            fallingItems: [],
+            lastFrameTime: 0,
+            // Performance optimization
+            maxItems: 10, // Limit number of items on screen
+            itemCreationRate: 800 // ms between item creation
+        };
+
+        const startButton = document.getElementById('start-game');
+        const pauseButton = document.getElementById('pause-game');
+        const playAgainButton = document.getElementById('play-again');
+        const gameResult = document.getElementById('game-result');
+        const scoreDisplay = document.getElementById('score');
+        const timerDisplay = document.getElementById('timer');
+        const finalScoreDisplay = document.getElementById('final-score');
+        const resultTitle = document.getElementById('result-title');
+        const resultMessage = document.getElementById('result-message');
+        const gameArea = document.getElementById('game-area');
+        const bucket = document.getElementById('bucket');
+        const lifeDisplays = [
+            document.getElementById('life-1'),
+            document.getElementById('life-2'),
+            document.getElementById('life-3')
+        ];
+
+        // Item types with their properties
+        const itemTypes = [
+            { 
+                type: 't-shirt', 
+                points: 10, 
+                icon: 'fas fa-tshirt',
+                class: 'item-t-shirt',
+                probability: 0.4
+            },
+            { 
+                type: 'hoodie', 
+                points: 20, 
+                icon: 'fas fa-hoodie',
+                class: 'item-hoodie',
+                probability: 0.2
+            },
+            { 
+                type: 'pants', 
+                points: 15, 
+                icon: 'fas fa-tshirt',
+                class: 'item-pants',
+                probability: 0.3
+            },
+            { 
+                type: 'bomb', 
+                points: 0, 
+                icon: 'fas fa-bomb',
+                class: 'item-bomb',
+                probability: 0.1
+            }
+        ];
+
+        // Create confetti animation
+        function createConfetti() {
+            const colors = ['#ff3366', '#4A90E2', '#FF6B6B', '#2ecc71', '#FF8E53', '#7B68EE'];
+            for (let i = 0; i < 50; i++) { // Reduced from 100 to 50 for performance
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.width = Math.random() * 10 + 5 + 'px';
+                confetti.style.height = Math.random() * 10 + 5 + 'px';
+                confetti.style.animationDelay = Math.random() * 2 + 's';
+                document.body.appendChild(confetti);
+                
+                // Remove confetti after animation
+                setTimeout(() => {
+                    if (confetti.parentNode) {
+                        confetti.parentNode.removeChild(confetti);
+                    }
+                }, 3000);
+            }
+        }
+
+        // Initialize the game
+        function initGame() {
+            // Reset game state
+            gameState.score = 0;
+            gameState.timeLeft = 60;
+            gameState.lives = 3;
+            gameState.isPlaying = false;
+            gameState.bucketPosition = (gameArea.offsetWidth - bucket.offsetWidth) / 2;
+            gameState.fallingItems = [];
+            gameState.lastFrameTime = 0;
+            
+            // Clear any existing intervals
+            if (gameState.gameInterval) clearInterval(gameState.gameInterval);
+            if (gameState.itemInterval) clearInterval(gameState.itemInterval);
+            
+            // Update UI
+            scoreDisplay.textContent = '0';
+            timerDisplay.textContent = '60';
+            startButton.disabled = false;
+            pauseButton.disabled = true;
+            pauseButton.textContent = 'Pause';
+            gameResult.style.display = 'none';
+            
+            // Reset lives display
+            lifeDisplays.forEach(life => life.classList.remove('lost'));
+            
+            // Position bucket
+            updateBucketPosition();
+            
+            // Clear game area
+            const existingItems = document.querySelectorAll('.falling-item');
+            existingItems.forEach(item => item.remove());
+        }
+
+        // Start the game
+        function startGame() {
+            gameState.isPlaying = true;
+            startButton.disabled = true;
+            pauseButton.disabled = false;
+            
+            // Start game timer
+            gameState.gameInterval = setInterval(() => {
+                gameState.timeLeft--;
+                timerDisplay.textContent = gameState.timeLeft;
+                
+                if (gameState.timeLeft <= 0) {
+                    endGame(true);
+                }
+            }, 1000);
+            
+            // Start generating falling items with performance optimization
+            gameState.itemInterval = setInterval(() => {
+                // Limit number of items on screen for performance
+                if (gameState.fallingItems.length < gameState.maxItems) {
+                    createFallingItem();
+                }
+            }, gameState.itemCreationRate);
+            
+            // Start game loop with requestAnimationFrame for smoother animation
+            gameState.lastFrameTime = performance.now();
+            requestAnimationFrame(gameLoop);
+        }
+
+        // Pause/resume the game
+        function togglePause() {
+            if (!gameState.isPlaying) return;
+            
+            gameState.isPlaying = !gameState.isPlaying;
+            
+            if (gameState.isPlaying) {
+                pauseButton.textContent = 'Pause';
+                gameState.lastFrameTime = performance.now();
+                requestAnimationFrame(gameLoop);
+            } else {
+                pauseButton.textContent = 'Resume';
+            }
+        }
+
+        // Create a new falling item
+        function createFallingItem() {
+            if (!gameState.isPlaying) return;
+            
+            // Determine item type based on probability
+            const rand = Math.random();
+            let cumulativeProbability = 0;
+            let selectedItem;
+            
+            for (const item of itemTypes) {
+                cumulativeProbability += item.probability;
+                if (rand <= cumulativeProbability) {
+                    selectedItem = item;
+                    break;
+                }
+            }
+            
+            // Create item element
+            const item = document.createElement('div');
+            item.className = `falling-item ${selectedItem.class}`;
+            item.innerHTML = `<i class="${selectedItem.icon}"></i>`;
+            item.dataset.type = selectedItem.type;
+            item.dataset.points = selectedItem.points;
+            
+            // Random horizontal position
+            const maxLeft = gameArea.offsetWidth - item.offsetWidth;
+            const leftPos = Math.floor(Math.random() * maxLeft);
+            
+            item.style.left = `${leftPos}px`;
+            item.style.top = '0px';
+            
+            gameArea.appendChild(item);
+            gameState.fallingItems.push({
+                element: item,
+                top: 0,
+                left: leftPos,
+                speed: 2 + Math.random() * 2,
+                type: selectedItem.type,
+                points: selectedItem.points
+            });
+        }
+
+        // Main game loop with optimized performance
+        function gameLoop(timestamp) {
+            if (!gameState.isPlaying) return;
+            
+            // Calculate time delta for consistent movement regardless of frame rate
+            const deltaTime = timestamp - gameState.lastFrameTime;
+            gameState.lastFrameTime = timestamp;
+            
+            // Update falling items
+            for (let i = gameState.fallingItems.length - 1; i >= 0; i--) {
+                const item = gameState.fallingItems[i];
+                item.top += item.speed * (deltaTime / 16); // Normalize to 60fps
+                item.element.style.top = `${item.top}px`;
+                
+                // Check if item is caught by bucket
+                if (isItemCaught(item)) {
+                    handleItemCaught(item, i);
+                }
+                // Check if item reached bottom
+                else if (item.top > gameArea.offsetHeight - 50) {
+                    // Only penalize if it's a clothing item (not a bomb)
+                    if (item.type !== 'bomb') {
+                        gameState.lives--;
+                        updateLivesDisplay();
+                        
+                        if (gameState.lives <= 0) {
+                            endGame(false);
+                            return;
+                        }
+                    }
+                    
+                    item.element.remove();
+                    gameState.fallingItems.splice(i, 1);
+                }
+            }
+            
+            // Continue game loop
+            requestAnimationFrame(gameLoop);
+        }
+
+        // Check if item is caught by bucket
+        function isItemCaught(item) {
+            const bucketLeft = gameState.bucketPosition;
+            const bucketRight = bucketLeft + bucket.offsetWidth;
+            const bucketTop = gameArea.offsetHeight - bucket.offsetHeight - 10;
+            
+            const itemLeft = item.left;
+            const itemRight = item.left + item.element.offsetWidth;
+            const itemBottom = item.top + item.element.offsetHeight;
+            
+            return (
+                itemBottom >= bucketTop &&
+                itemLeft >= bucketLeft - 20 &&
+                itemRight <= bucketRight + 20
+            );
+        }
+
+        // Handle when an item is caught
+        function handleItemCaught(item, index) {
+            if (item.type === 'bomb') {
+                gameState.lives--;
+                updateLivesDisplay();
+                
+                if (gameState.lives <= 0) {
+                    endGame(false);
+                    return;
+                }
+            } else {
+                gameState.score += item.points;
+                scoreDisplay.textContent = gameState.score;
+                
+                // Add visual feedback for caught items
+                item.element.style.transform = 'scale(1.3)';
+                setTimeout(() => {
+                    item.element.style.transform = 'scale(1)';
+                }, 150);
+            }
+            
+            // Remove item after a short delay
+            setTimeout(() => {
+                if (item.element.parentNode) {
+                    item.element.remove();
+                }
+            }, 200);
+            
+            gameState.fallingItems.splice(index, 1);
+        }
+
+        // Update lives display
+        function updateLivesDisplay() {
+            for (let i = 0; i < 3; i++) {
+                if (i < gameState.lives) {
+                    lifeDisplays[i].classList.remove('lost');
+                } else {
+                    lifeDisplays[i].classList.add('lost');
+                }
+            }
+        }
+
+        // Update bucket position
+        function updateBucketPosition() {
+            bucket.style.left = `${gameState.bucketPosition}px`;
+        }
+
+        // Move bucket with keyboard
+        document.addEventListener('keydown', (e) => {
+            if (!gameState.isPlaying) return;
+            
+            const bucketSpeed = 20;
+            const maxLeft = gameArea.offsetWidth - bucket.offsetWidth;
+            
+            if (e.key === 'ArrowLeft' || e.key === 'a') {
+                gameState.bucketPosition = Math.max(0, gameState.bucketPosition - bucketSpeed);
+                updateBucketPosition();
+            } else if (e.key === 'ArrowRight' || e.key === 'd') {
+                gameState.bucketPosition = Math.min(maxLeft, gameState.bucketPosition + bucketSpeed);
+                updateBucketPosition();
+            }
+        });
+
+        // Move bucket with touch/mouse
+        let isDragging = false;
+        let lastClientX = 0;
+        
+        gameArea.addEventListener('mousedown', startDrag);
+        gameArea.addEventListener('touchstart', startDrag);
+        
+        document.addEventListener('mousemove', drag);
+        document.addEventListener('touchmove', drag);
+        
+        document.addEventListener('mouseup', endDrag);
+        document.addEventListener('touchend', endDrag);
+        
+        function startDrag(e) {
+            if (!gameState.isPlaying) return;
+            
+            isDragging = true;
+            lastClientX = e.clientX || (e.touches && e.touches[0].clientX);
+            e.preventDefault();
+        }
+        
+        function drag(e) {
+            if (!isDragging || !gameState.isPlaying) return;
+            
+            const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+            if (!clientX) return;
+            
+            // Throttle movement updates for better performance
+            if (Math.abs(clientX - lastClientX) < 5) return;
+            
+            const gameAreaRect = gameArea.getBoundingClientRect();
+            const relativeX = clientX - gameAreaRect.left - (bucket.offsetWidth / 2);
+            const maxLeft = gameArea.offsetWidth - bucket.offsetWidth;
+            
+            gameState.bucketPosition = Math.max(0, Math.min(maxLeft, relativeX));
+            updateBucketPosition();
+            
+            lastClientX = clientX;
+        }
+        
+        function endDrag() {
+            isDragging = false;
+        }
+
+        // End the game
+        function endGame(isTimeUp) {
+            gameState.isPlaying = false;
+            clearInterval(gameState.gameInterval);
+            clearInterval(gameState.itemInterval);
+            
+            // Remove all falling items
+            gameState.fallingItems.forEach(item => {
+                if (item.element.parentNode) {
+                    item.element.remove();
+                }
+            });
+            gameState.fallingItems = [];
+            
+            finalScoreDisplay.textContent = gameState.score;
+            
+            if (isTimeUp) {
+                resultTitle.textContent = 'Time\'s Up!';
+                resultMessage.textContent = 'Great job collecting Sleepysleve items!';
+            } else {
+                resultTitle.textContent = 'Game Over!';
+                resultMessage.textContent = 'You ran out of lives, but you collected some great pieces!';
+            }
+            
+            // Create confetti animation for high scores
+            if (gameState.score > 100) {
+                createConfetti();
+            }
+            
+            gameResult.style.display = 'block';
+            gameResult.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Event Listeners
+        startButton.addEventListener('click', startGame);
+        pauseButton.addEventListener('click', togglePause);
+        playAgainButton.addEventListener('click', initGame);
+
+        // Initialize the game on page load
+        document.addEventListener('DOMContentLoaded', initGame);
+    </script>
+</body>
+</html>
